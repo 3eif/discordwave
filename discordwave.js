@@ -40,6 +40,8 @@ client.on("message", async message => {
 	const command = args.shift().toLowerCase();
 
     if (command === "vaporwave" || command === "radio" || command === "join" || command === "play") {
+        if(!message.member.voice.channel) return message.channel.send("You must be in a voice channel to use this command");
+        
         const player = client.music.players.spawn({
             guild: message.guild,
             voiceChannel: message.member.voice.channel,
@@ -72,6 +74,8 @@ client.on("message", async message => {
     }
 
     if (command === "stop" || command === "leave" || command === "dc" || command === "fuckoff") {
+        if(!message.member.voice.channel) return message.channel.send("You must be in a voice channel to use this command");
+        
         const player = client.music.players.get(message.guild.id);
 
         if (player) {
