@@ -4,7 +4,24 @@ const { ErelaClient } = require("erela.js");
 
 const { prefix, token, nodes } = require('./config.json');
 
-const client = new Discord.Client();
+const client = new Client({
+    disableMentions: 'everyone',
+    messageCacheMaxSize: 50,
+    messageCacheLifetime: 60,
+    messageSweepInterval: 120,
+    partials: [
+        'MESSAGE',
+        'CHANNEL',
+    ],
+    ws: {
+        intents: [
+            'GUILDS',
+            'GUILD_MESSAGES',
+            'GUILD_VOICE_STATES',
+        ],
+    },
+});
+
 client.log = (msg) => { console.log(`[${new Date().toLocaleString()}] > ${msg}`); };
 const embedColor = "#FF6AD5";
 
@@ -36,12 +53,12 @@ client.on("message", async message => {
 
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-	const args = message.content.slice(prefix.length).split(/ +/);
-	const command = args.shift().toLowerCase();
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const command = args.shift().toLowerCase();
 
     if (command === "vaporwave" || command === "radio" || command === "join" || command === "play") {
-        if(!message.member.voice.channel) return message.channel.send("You must be in a voice channel to use this command");
-        
+        if (!message.member.voice.channel) return message.channel.send("You must be in a voice channel to use this command");
+
         const player = client.music.players.spawn({
             guild: message.guild,
             voiceChannel: message.member.voice.channel,
@@ -74,8 +91,8 @@ client.on("message", async message => {
     }
 
     if (command === "stop" || command === "leave" || command === "dc" || command === "fuckoff") {
-        if(!message.member.voice.channel) return message.channel.send("You must be in a voice channel to use this command");
-        
+        if (!message.member.voice.channel) return message.channel.send("You must be in a voice channel to use this command");
+
         const player = client.music.players.get(message.guild.id);
 
         if (player) {
