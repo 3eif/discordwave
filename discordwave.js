@@ -4,7 +4,7 @@ const { ErelaClient } = require("erela.js");
 
 const { prefix, token, nodes } = require('./config.json');
 
-const client = new Client({
+const client = new Discord.Client({
     disableMentions: 'everyone',
     messageCacheMaxSize: 50,
     messageCacheLifetime: 60,
