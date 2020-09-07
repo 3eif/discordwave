@@ -2,7 +2,7 @@
   "name": "discordwave",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,10 +17,8 @@
   },
   "homepage": "https://github.com/EarTensifier/Discordwave#readme",
   "dependencies": {
-    "cpu-stat": "^2.0.1",
-    "erela.js": "^1.1.7",
-    "ffmpeg-static": "^4.1.0",
-    "node-opus": "^0.3.3",
-    "opusscript": "0.0.7"
+    "discord.js": "^12.3.1",
+    "lavaclient": "^3.1.2",
+    "ms": "^2.1.2"
   }
 }
