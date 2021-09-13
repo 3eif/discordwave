@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "Node 1",
+      "host": "localhost",
+      "password": "youshallnotpass",
+      "port": 2333
+    }
+  ],
+  "token": "",
+  "prefix": "%",
+  "owners": []
+}
