@@ -1,24 +1,43 @@
 {
   "name": "discordwave",
-  "version": "1.0.0",
-  "description": "",
-  "main": "./src/index.js",
+  "version": "2.0.0",
+  "description": "A modern Discord bot that plays vaporwave radio",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "watch": "tsc -w",
+    "clean": "rm -rf dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EarTensifier/Discordwave.git"
+    "url": "git+https://github.com/3eif/discordwave.git"
   },
+  "keywords": [
+    "discord",
+    "bot",
+    "vaporwave",
+    "music",
+    "radio"
+  ],
   "author": "",
   "license": "ISC",
+  "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/EarTensifier/Discordwave/issues"
+    "url": "https://github.com/3eif/discordwave/issues"
   },
-  "homepage": "https://github.com/EarTensifier/Discordwave#readme",
+  "homepage": "https://github.com/3eif/discordwave#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
-    "discord.js": "^12.3.1",
-    "lavaclient": "^3.1.2",
-    "ms": "^2.1.2"
+    "@discordjs/opus": "^0.10.0",
+    "@discordjs/voice": "^0.18.0",
+    "@types/node": "^24.0.12",
+    "discord.js": "^14.21.0",
+    "dotenv": "^17.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }

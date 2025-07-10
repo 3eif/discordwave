@@ -1,0 +1,24 @@
+{
+  "name": "discordwave",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EarTensifier/Discordwave.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EarTensifier/Discordwave/issues"
+  },
+  "homepage": "https://github.com/EarTensifier/Discordwave#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "lavaclient": "^3.1.2",
+    "ms": "^2.1.2"
+  }
+}
